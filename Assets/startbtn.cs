@@ -7,7 +7,8 @@ public class startbtn : MonoBehaviour {
 
       public void test(int index)
       {
-          Application.LoadLevel(index);
+          SceneManager.LoadScene(index);
+          Resources.UnloadUnusedAssets();
       }
   
       public void test2(string levelName)
