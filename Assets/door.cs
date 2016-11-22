@@ -19,13 +19,13 @@ public class door : MonoBehaviour {
 		if(trigger){
 			if(close){
 				if(key){
-					if(Input.GetKeyDown(KeyCode.E)){
+					if(Input.GetKeyDown(KeyCode.Q)){
 						open = true;
 						close = false;
 					}
 				}
 			} else {
-					if(Input.GetKeyDown(KeyCode.E)){
+					if(Input.GetKeyDown(KeyCode.Q)){
 						close = true;
 						open = false;
 					}
@@ -34,7 +34,7 @@ public class door : MonoBehaviour {
 
 		if(trigger){
 			if(open){
-				var ro = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0.0f, 90.0f, 0.0f), Time.deltaTime*200);
+				var ro = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0.0f, 45.0f, 0.0f), Time.deltaTime*200);
 				transform.rotation = ro;
 			} else {
 				var ro = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0.0f, 0.0f, 0.0f), Time.deltaTime*200);
@@ -45,12 +45,12 @@ public class door : MonoBehaviour {
 	void OnGUI(){
 		if(trigger){
 			if(open){
-				GUI.Box(new Rect(0,0,200,25), "O");
+				GUI.Box(new Rect(0,200,200,25), "Press Q to close the door");
 			} else {
 				if(key){
-					GUI.Box(new Rect(0,0,200,25), "O");
+					GUI.Box(new Rect(0,200,200,25), "Press Q to oprn the door");
 					} else {
-					GUI.Box(new Rect(0,0,200,25), "Need key");
+					GUI.Box(new Rect(0,200,200,25), "You are required to find the Key.");
 					}
 				
 			}

@@ -14,10 +14,16 @@ public class key : MonoBehaviour {
 
 	void Update(){
 		if(trigger){
-			if(Input.GetKeyDown(KeyCode.E)){
+			if(Input.GetKeyDown(KeyCode.Q)){
 				door.key = true;
 				Destroy(this.gameObject);
 			}
+		}
+	}
+
+		void OnGUI(){
+		if(trigger){
+				GUI.Box(new Rect(0,200,200,25), "Press Q to pick the Key.");
 		}
 	}
 
