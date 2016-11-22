@@ -80,6 +80,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.y = 0f;
             }
 
+         if(Input.GetKeyDown(KeyCode.C)){
+         		Vector3 temp2 = transform.localScale;
+         		temp2.y = 0.25f;
+                transform.localScale = temp2;
+         }
+
+         if(Input.GetKeyUp(KeyCode.C)) {
+         	    Vector3 temp2 = transform.localScale;
+         		temp2.y = 2.9f;
+                transform.localScale = temp2;
+         }
+
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
