@@ -48,9 +48,9 @@ public class door : MonoBehaviour {
 				GUI.Box(new Rect(0,200,200,25), "Press Q to close the door");
 			} else {
 				if(key){
-					GUI.Box(new Rect(0,200,200,25), "Press Q to oprn the door");
+					GUI.Box(new Rect(0,200,200,25), "Press Q to open the door");
 					} else {
-					GUI.Box(new Rect(0,200,200,25), "You are required to find the Key.");
+					GUI.Box(new Rect(0,200,200,25), "You are required to find the key");
 					}
 				
 			}
