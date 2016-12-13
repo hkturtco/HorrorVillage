@@ -28,7 +28,7 @@ public class CardBox : MonoBehaviour
     {
         if (trigger)
         {
-            GUI.Box(new Rect(0, 200, 200, 25), "Check out the bed.");
+            GUI.Box(new Rect(0, 150, 200, 30), "Check out the bed.");
         }
     }
 }
