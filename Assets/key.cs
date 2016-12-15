@@ -13,7 +13,7 @@ public class key : MonoBehaviour {
 	}
 
 	void Update(){
-		if(trigger){
+		if(trigger && CardBox.boxopen){
 			if(Input.GetKeyDown(KeyCode.Q)){
 				door.key = true;
 				Destroy(this.gameObject);
@@ -22,7 +22,7 @@ public class key : MonoBehaviour {
 	}
 
 		void OnGUI(){
-		if(trigger){
+		if(trigger && CardBox.boxopen){
 				GUI.Box(new Rect(0,200,200,25), "Press Q to pick the Key.");
 		}
 	}

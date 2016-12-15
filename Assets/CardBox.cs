@@ -1,34 +1,59 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CardBox : MonoBehaviour
-{
-    public bool trigger = false;
+public class CardBox : MonoBehaviour{
+	public static bool stick;
+	public static bool boxopen;
+	public bool boxclose;
+	public bool boxtrigger;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
+	void OnTriggerEnter(Collider other){
+		boxtrigger = true;
+	}
+	void OnTriggerExit (Collider other){
+		boxtrigger = false;
+	}
+		
     // Update is called once per frame
     void Update()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 2))
-        {
-            Debug.Log("Hit something!");
-            trigger = true;
-        }
-    }
+	{
+		if (boxtrigger) {
+			if (boxclose) {
+				if (stick) {
+					if (Input.GetKeyDown (KeyCode.O)) {
+						boxopen = true;
+						boxclose = false;
+						Destroy (this.gameObject);
+					}
+				}
+			} else {
+				if (Input.GetKeyDown (KeyCode.O)) {
+					boxclose = true;
+					boxopen = false;
+				}
+			}
+
+			if (boxtrigger) {
+				if (boxopen) {
+					Destroy (this.gameObject);
+				}
+			}
+		}
+	}
 
     // Show message on screen
     void OnGUI()
     {
-        if (trigger)
+        if (boxtrigger)
         {
-            GUI.Box(new Rect(0, 150, 200, 30), "Check out the bed.");
+			if (boxopen) {
+			} else {
+				if (stick) {
+					GUI.Box (new Rect (0, 150, 300, 30), "Press O to crack the box");
+				} else {
+					GUI.Box (new Rect (0, 150, 300, 30), "Please find the sitck to crack the box");
+				}
+			}
         }
     }
 }

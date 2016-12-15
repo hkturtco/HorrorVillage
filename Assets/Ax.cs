@@ -2,19 +2,29 @@
 using System.Collections;
 
 public class Ax : MonoBehaviour {
+	public bool trigger;
 
-    void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Found an AX!");
-    }
+	void OnTriggerEnter(Collider other){
+		trigger = true;
+	}
 
-    // Use this for initialization
-    void Start () {
-	
+	void OnTriggerExit(Collider other){
+		trigger = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void Update(){
+		if(trigger){
+			if(Input.GetKeyDown(KeyCode.Q)){
+				CardBox.stick = true;
+				Destroy(this.gameObject);
+			}
+		}
 	}
+
+	void OnGUI(){
+		if(trigger){
+			GUI.Box(new Rect(0,200,200,25), "Press Q to pick the Axe.");
+		}
+	}
+
 }
