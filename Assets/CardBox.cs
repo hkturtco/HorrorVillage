@@ -51,7 +51,7 @@ public class CardBox : MonoBehaviour{
 				if (stick) {
 					GUI.Box (new Rect (0, 150, 300, 30), "Press O to crack the box");
 				} else {
-					GUI.Box (new Rect (0, 150, 300, 30), "Please find the sitck to crack the box");
+					GUI.Box (new Rect (0, 150, 400, 30), "You are required to find something to crack the box");
 				}
 			}
         }

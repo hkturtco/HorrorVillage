@@ -9,7 +9,7 @@ public class can_trans : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-         im.GetComponent<CanvasRenderer>().SetAlpha(0.7f);
+         im.GetComponent<CanvasRenderer>().SetAlpha(0.3f);
 	}
 	
 	// Update is called once per frame

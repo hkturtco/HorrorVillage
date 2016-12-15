@@ -8,6 +8,7 @@ public class monster : MonoBehaviour {
 	public Transform myTransform; 
 	public GameObject Canvas;
 	bool chasing = false;
+	public static int hittime = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -45,7 +46,10 @@ public class monster : MonoBehaviour {
     }
 
     IEnumerator Wait() {
-        yield return new WaitForSeconds(2);
-        Canvas.gameObject.SetActive(true);
+        yield return new WaitForSeconds(5);
+		hittime = hittime - 1;
+		if (hittime == 0) {
+			Canvas.gameObject.SetActive (true);
+		}
     }
 }
