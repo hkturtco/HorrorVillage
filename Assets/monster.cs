@@ -7,39 +7,36 @@ public class monster : MonoBehaviour {
 	public Transform target;
 	public Transform myTransform; 
 	public GameObject Die_Canvas;
-	bool chasing = false;
 	public static int hittime = 10;
-
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		var animator = gameObject.GetComponent<Animator>();
+		var roar = gameObject.GetComponent<AudioSource>();
 		if (target.transform.position.z < -30) {
-			chasing = true;
-			// AudioSource audio = GetComponent<AudioSource>();
-        	//audio.Play();
-        	//audio.Play(44100);
-			var animator = gameObject.GetComponent<Animator>();
+			roar.mute = false;
 			animator.SetTrigger("SeePlayer");
-		}
-		if (chasing){
 			transform.LookAt(target);
+		}
+		var animatorstateinfo = animator.GetCurrentAnimatorStateInfo(0);
+
+		if (animatorstateinfo.IsName("chase")){
+			roar.mute = true;
 			transform.Translate(Vector3.forward*6*Time.deltaTime);
 		}
 		else{
 			transform.Translate(Vector3.forward*0*Time.deltaTime);
 		}
-
 	}
 
 	void OnCollisionEnter(Collision collision) {
 
 		if (collision.gameObject.name == "FPSController"){
 
-			chasing = false;
 			var animator = gameObject.GetComponent<Animator>();
 			animator.SetTrigger("InMeleeRange");
 
@@ -55,4 +52,5 @@ public class monster : MonoBehaviour {
 			Die_Canvas.gameObject.SetActive (true);
 		}
     }
+
 }
