@@ -8,6 +8,7 @@ public class monster : MonoBehaviour {
 	public Transform myTransform; 
 	public GameObject Die_Canvas;
 	public static int hittime = 10;
+	bool playedroar = false;
 	// Use this for initialization
 	void Start () {
 
@@ -18,14 +19,15 @@ public class monster : MonoBehaviour {
 		var animator = gameObject.GetComponent<Animator>();
 		var roar = gameObject.GetComponent<AudioSource>();
 		if (target.transform.position.z < -30) {
-			roar.mute = false;
+			if (!playedroar) roar.mute = false;
+			playedroar = true;
 			animator.SetTrigger("SeePlayer");
 			transform.LookAt(target);
 		}
 		var animatorstateinfo = animator.GetCurrentAnimatorStateInfo(0);
 
-		if (animatorstateinfo.IsName("chase")){
-			roar.mute = true;
+		if (animatorstateinfo.IsName("chase") || animatorstateinfo.IsName("attack")){
+			if (playedroar) roar.mute = true;
 			transform.Translate(Vector3.forward*6*Time.deltaTime);
 		}
 		else{
@@ -40,6 +42,13 @@ public class monster : MonoBehaviour {
 			var animator = gameObject.GetComponent<Animator>();
 			animator.SetTrigger("InMeleeRange");
 
+			StartCoroutine(Wait());			
+		}
+		if ((collision.gameObject.name == "Bullet") || (collision.gameObject.name == "Bullet(Clone)")){
+
+			var animator = gameObject.GetComponent<Animator>();
+			animator.SetTrigger("GetHit");
+			Debug.Log("gethit");
 			StartCoroutine(Wait());			
 		}
         
