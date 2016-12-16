@@ -181,7 +181,7 @@ GameObject:
   - 65: {fileID: 22151766}
   - 23: {fileID: 22151765}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: Wall(+z)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1140,7 +1140,7 @@ GameObject:
   - 65: {fileID: 161856907}
   - 23: {fileID: 161856906}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: Wall(+x)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1219,7 +1219,7 @@ GameObject:
   - 65: {fileID: 183976554}
   - 23: {fileID: 183976553}
   m_Layer: 0
-  m_Name: Wall (1)
+  m_Name: Wall(supplementary)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1279,13 +1279,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 183976552}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.43, y: 6.17, z: -28.82}
-  m_LocalScale: {x: 3.965771, y: 1.5780123, z: 0.30986017}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.558399, y: 0.40125, z: 0.15238093}
+  m_LocalScale: {x: 0.116982706, y: 0.19725154, z: 0.6723181}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 524143968}
+  m_RootOrder: 0
 --- !u!1 &204436434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,7 +1494,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: -281.583, y: 81.04201, z: 177.664}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
 --- !u!95 &324786900
 Animator:
   serializedVersion: 3
@@ -1573,7 +1573,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
 --- !u!1 &366244882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,7 +1636,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
 --- !u!1 &470859720 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: b36dbcc8ef8059c4a9c8f753d6b0350b, type: 3}
@@ -1665,12 +1665,12 @@ GameObject:
   - 65: {fileID: 524143966}
   - 23: {fileID: 524143965}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: Wall(-z)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &524143965
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1729,7 +1729,8 @@ Transform:
   m_LocalPosition: {x: -1.5, y: 2.96, z: -28.9}
   m_LocalScale: {x: 33.900486, y: 8, z: 0.52499956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 183976556}
   m_Father: {fileID: 0}
   m_RootOrder: 18
 --- !u!1 &558361301 stripped
@@ -1880,7 +1881,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
 --- !u!82 &623911896
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2351,7 +2352,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 86.866005}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 28
 --- !u!82 &1001674902
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2879,13 +2880,17 @@ Prefab:
     - target: {fileID: 9500000, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
+      objectReference: {fileID: 9100000, guid: f7fad22737afb4c48b5328708e75ff4b, type: 2}
     - target: {fileID: 9500000, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
       propertyPath: m_WarningMessage
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
       propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 39d03f82786b57d41af8bd27bce84402, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3038,7 +3043,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
 --- !u!1 &1354531795
 GameObject:
   m_ObjectHideFlags: 0
@@ -3328,7 +3333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 137426229}
   myTransform: {fileID: 1597226611}
-  Canvas: {fileID: 1853614794}
+  Die_Canvas: {fileID: 1853614794}
 --- !u!65 &1597226614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3341,6 +3346,80 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2656982, y: 3.0925817, z: 1.5080208}
   m_Center: {x: 0.046673775, y: 1.5254122, z: 0.0852108}
+--- !u!82 &1597226615
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597226609}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ba212728f5f374340883050a08608331, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1696486716
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,7 +3508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698f7422e90376545a1510c391a74b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt: {fileID: 0}
 --- !u!1 &1729444986
 GameObject:
   m_ObjectHideFlags: 0
@@ -3442,7 +3520,7 @@ GameObject:
   - 65: {fileID: 1729444988}
   - 23: {fileID: 1729444987}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: Wall(-x)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3575,7 +3653,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b36dbcc8ef8059c4a9c8f753d6b0350b, type: 3}
       propertyPath: m_Name
-      value: Drawer (2)
+      value: Drawer
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b36dbcc8ef8059c4a9c8f753d6b0350b, type: 3}
       propertyPath: m_LocalScale.x
@@ -3651,6 +3729,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 037a40d3a4885de498059ec3ba7214bd, type: 2}
+    - target: {fileID: 170632, guid: 6ff1c0e31ef7d1c42abf22322dc60888, type: 2}
+      propertyPath: m_Name
+      value: Axe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff1c0e31ef7d1c42abf22322dc60888, type: 2}
   m_IsPrefabParent: 0
@@ -3741,7 +3823,7 @@ RectTransform:
   m_Children:
   - {fileID: 1514475802}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3760,7 +3842,7 @@ GameObject:
   - 114: {fileID: 1853614795}
   - 114: {fileID: 1853614799}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Die_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3835,7 +3917,7 @@ RectTransform:
   m_Children:
   - {fileID: 1269033497}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

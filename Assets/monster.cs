@@ -6,7 +6,7 @@ public class monster : MonoBehaviour {
 
 	public Transform target;
 	public Transform myTransform; 
-	public GameObject Canvas;
+	public GameObject Die_Canvas;
 	bool chasing = false;
 	public static int hittime = 10;
 
@@ -19,6 +19,9 @@ public class monster : MonoBehaviour {
 	void Update () {
 		if (target.transform.position.z < -30) {
 			chasing = true;
+			// AudioSource audio = GetComponent<AudioSource>();
+        	//audio.Play();
+        	//audio.Play(44100);
 			var animator = gameObject.GetComponent<Animator>();
 			animator.SetTrigger("SeePlayer");
 		}
@@ -49,7 +52,7 @@ public class monster : MonoBehaviour {
         yield return new WaitForSeconds(5);
 		hittime = hittime - 1;
 		if (hittime == 0) {
-			Canvas.gameObject.SetActive (true);
+			Die_Canvas.gameObject.SetActive (true);
 		}
     }
 }
