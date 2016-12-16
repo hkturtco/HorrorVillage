@@ -23,7 +23,7 @@ public class Ax : MonoBehaviour {
 
 	void OnGUI(){
 		if(trigger){
-			GUI.Box(new Rect(0,200,200,25), "Press Q to pick the Axe.");
+			GUI.Box(new Rect(0,200,300,25), "Press Q to pick the Axe.");
 		}
 	}
 

@@ -45,12 +45,12 @@ public class door : MonoBehaviour {
 	void OnGUI(){
 		if(trigger){
 			if(open){
-				GUI.Box(new Rect(0,200,200,25), "Press Q to close the door");
+				GUI.Box(new Rect(0,200,300,25), "Press Q to close the door");
 			} else {
 				if(key){
-					GUI.Box(new Rect(0,200,200,25), "Press Q to open the door");
+					GUI.Box(new Rect(0,200,300,25), "Press Q to open the door");
 					} else {
-					GUI.Box(new Rect(0,200,200,25), "You are required to find the key");
+					GUI.Box(new Rect(0,200,300,25), "You are required to find the key");
 					}
 				
 			}

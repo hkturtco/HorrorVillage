@@ -23,7 +23,7 @@ public class key : MonoBehaviour {
 
 		void OnGUI(){
 		if(trigger && CardBox.boxopen){
-				GUI.Box(new Rect(0,200,200,25), "Press Q to pick the Key.");
+				GUI.Box(new Rect(0,200,300,25), "Press Q to pick the Key.");
 		}
 	}
 
