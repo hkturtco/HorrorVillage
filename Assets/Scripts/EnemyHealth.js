@@ -3,17 +3,18 @@ var maxHealth =1000;
 var Health = 1000;
 var scale=1f;
 var enemyHP : GameObject;
-enemyHP = GameObject.Find("Health");
+var monster_animator : Animator;
 function ApplyDamage (TheDamage:int) {
- Health -= TheDamage;
- scale=parseFloat((Health*1.0f)/maxHealth);
- enemyHP.gameObject.transform.localScale = new Vector3(scale, 1f, 1f);
-   
- if(Health <=0){
-	 Dead();
- }
+ 	Health -= TheDamage;
+ 	scale=parseFloat((Health*1.0f)/maxHealth);
+ 	enemyHP.gameObject.transform.localScale = new Vector3(scale, 1f, 1f);
+ 	var animatorstateinfo = monster_animator.GetCurrentAnimatorStateInfo(0);
+ 	if (!animatorstateinfo.IsName("GetHit")){
+			monster_animator.SetTrigger("GetHit");
+	}
+
+ 	if(Health <=0){
+	 	monster_animator.SetTrigger("dead");
+ 	}
 }
 
-function Dead () {
-	Destroy(gameObject);
-}
