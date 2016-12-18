@@ -3,6 +3,12 @@ using System.Collections;
 
 public class Ax : MonoBehaviour {
 	public bool trigger;
+    public static bool getAx;
+
+    void Start()
+    {
+        //gameObject.SetActive(false);
+    }
 
 	void OnTriggerEnter(Collider other){
 		trigger = true;
@@ -12,17 +18,18 @@ public class Ax : MonoBehaviour {
 		trigger = false;
 	}
 
-	void Update(){
-		if(trigger){
+	void Update() {
+        Debug.Log(gameObject.activeSelf.ToString());
+        if (trigger) {
 			if(Input.GetKeyDown(KeyCode.Q)){
-				CardBox.stick = true;
+				getAx = true;
 				Destroy(this.gameObject);
 			}
 		}
 	}
 
-	void OnGUI(){
-		if(trigger){
+	void OnGUI() {
+		if (trigger) {
 			GUI.Box(new Rect(0,200,300,25), "Press Q to pick the Axe.");
 		}
 	}

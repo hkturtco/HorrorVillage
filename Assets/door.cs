@@ -17,7 +17,8 @@ public class door : MonoBehaviour {
 	void Update()
 	{		
 		if(trigger){
-			if(close){
+            this.transform.GetChild(0).gameObject.SetActive(true);
+            if (close){
 				if(key){
 					if(Input.GetKeyDown(KeyCode.Q)){
 						open = true;
