@@ -4,7 +4,7 @@ using System.Collections;
 public class Cardbox2 : MonoBehaviour {
     public static bool boxopen;
     public bool boxclose;
-    public bool boxtrigger;
+    private bool boxtrigger;
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,12 +23,14 @@ public class Cardbox2 : MonoBehaviour {
         var torchcolor = GameObject.Find("Spotlight").GetComponent<Light>().color;
         if (distance.magnitude < 3 && torchcolor == Color.red && Ax.getAx)
         {
-            GetComponent<Renderer>().enabled = false;
+            foreach (Renderer r in GetComponentsInChildren<Renderer>())
+                r.enabled = false;
 
         }
         else
         {
-            GetComponent<Renderer>().enabled = true;
+            foreach (Renderer r in GetComponentsInChildren<Renderer>())
+                r.enabled = true;
         }
         if (boxtrigger)
         {
@@ -73,7 +75,9 @@ public class Cardbox2 : MonoBehaviour {
             {
                 if (Ax.getAx)
                 {
-                    GUI.Box(new Rect(0, 150, 300, 30), "Press O to crack the box");
+                    GUI.skin.label.alignment = TextAnchor.UpperLeft;
+                    GUI.Box(new Rect(0, 150, 300, 20), "Press O to crack the box.");
+                    GUI.Box(new Rect(0, 200, 400, 20), "Note that the ax will be destroyed after use.");
                 }
                 else
                 {

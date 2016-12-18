@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class Ax : MonoBehaviour {
-	public bool trigger;
+	private bool trigger;
     public static bool getAx;
 
     void Start()
     {
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
 	void OnTriggerEnter(Collider other){
@@ -19,7 +19,6 @@ public class Ax : MonoBehaviour {
 	}
 
 	void Update() {
-        Debug.Log(gameObject.activeSelf.ToString());
         if (trigger) {
 			if(Input.GetKeyDown(KeyCode.Q)){
 				getAx = true;

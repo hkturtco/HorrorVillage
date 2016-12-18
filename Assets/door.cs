@@ -5,7 +5,7 @@ public class door : MonoBehaviour {
 	public static bool key;
 	public bool open;
 	public bool close;
-	public bool trigger;
+	private bool trigger;
 
 	void OnTriggerEnter(Collider other){
 		trigger = true;
@@ -15,15 +15,21 @@ public class door : MonoBehaviour {
 	}
 
 	void Update()
-	{		
-		if(trigger){
-            this.transform.GetChild(0).gameObject.SetActive(true);
+    {
+        if (trigger)
+        {
+            if (this.transform.FindChild("Ax"))
+            {
+                this.transform.FindChild("Ax").gameObject.SetActive(true);
+            }
             if (close){
 				if(key){
 					if(Input.GetKeyDown(KeyCode.Q)){
 						open = true;
 						close = false;
-					}
+                        var ro = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0.0f, 70.0f, 0.0f), Time.deltaTime * 200);
+                        transform.rotation = ro;
+                    }
 				}
 			} else {
 					if(Input.GetKeyDown(KeyCode.Q)){
@@ -31,28 +37,25 @@ public class door : MonoBehaviour {
 						open = false;
 					}
 			}
-		}
-
-		if(trigger){
-			if(open){
-				var ro = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0.0f, 70.0f, 0.0f), Time.deltaTime*200);
-				transform.rotation = ro;
-			} else {
-				var ro = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0.0f, 0.0f, 0.0f), Time.deltaTime*200);
-				transform.rotation = ro;
-			}
+            if (open)
+            {
+                var ro = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0.0f, 70.0f, 0.0f), Time.deltaTime * 200);
+                transform.rotation = ro;
+            }
 		}
 	}
 	void OnGUI(){
 		if(trigger){
 			if(open){
-				GUI.Box(new Rect(0,200,300,25), "Press Q to close the door");
+				GUI.Box(new Rect(0,200,300,25), "Press Q to close the door.");
 			} else {
-				if(key){
-					GUI.Box(new Rect(0,200,300,25), "Press Q to open the door");
-					} else {
-					GUI.Box(new Rect(0,200,300,25), "You are required to find the key");
-					}
+				if (key)
+                {
+					GUI.Box(new Rect(0,200,300,25), "Press Q to open the door.");
+				} else
+                {
+                    GUI.Box(new Rect(0,200,300,25), "You need a key to open the door.");
+				}
 				
 			}
 		}
