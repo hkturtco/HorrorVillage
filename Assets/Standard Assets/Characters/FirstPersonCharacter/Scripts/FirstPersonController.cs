@@ -84,13 +84,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.y = 0f;
             }
 
-         if(Input.GetKeyDown(KeyCode.C)){
+         if(Input.GetKeyDown(KeyCode.J)){
          		Vector3 temp2 = transform.localScale;
          		temp2.y = 0.25f;
                 transform.localScale = temp2;
          }
 
-         if(Input.GetKeyUp(KeyCode.C)) {
+         if(Input.GetKeyUp(KeyCode.J)) {
          	    Vector3 temp2 = transform.localScale;
          		temp2.y = 2.9f;
                 transform.localScale = temp2;

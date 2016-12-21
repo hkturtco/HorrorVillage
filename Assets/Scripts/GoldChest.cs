@@ -4,24 +4,29 @@ using System.Collections;
 public class GoldChest : MonoBehaviour
 {
     public bool boxtrigger;
+    private AudioSource a_openChest;
+
+    void Start()
+    {
+        this.transform.GetChild(1).gameObject.SetActive(false);
+        AudioSource[] audios = GetComponents<AudioSource>();
+        a_openChest = audios[0];
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        boxtrigger = true;
+        if (other.gameObject.name == "FPSController")
+            boxtrigger = true;
     }
     void OnTriggerExit(Collider other)
     {
         boxtrigger = false;
     }
-
-    // Use this for initialization
-    void Start () {
-        this.transform.GetChild(1).gameObject.SetActive(false);
-    }
 	
-	// Update is called once per frame
 	void Update () {
 	    if (boxtrigger && Input.GetKeyDown(KeyCode.O))
         {
+            a_openChest.Play();
             GetComponent<Renderer>().enabled = false;
             this.transform.GetChild(1).gameObject.SetActive(true);
         }
