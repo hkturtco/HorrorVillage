@@ -47,7 +47,7 @@ public class door : MonoBehaviour {
             open = true;
             close = false;
         }
-        if (trigger && open && Input.GetKeyDown(KeyCode.C))
+        if (trigger && open && Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("close door");
             StartCoroutine(playDoorCloseAudio());
@@ -68,7 +68,7 @@ public class door : MonoBehaviour {
 	void OnGUI(){
 		if (trigger) {
 			if (open) {
-				GUI.Box(new Rect(0,200,300,25), "Press C to close the door.");
+				GUI.Box(new Rect(0,200,300,25), "Press P to close the door.");
 			} else {
 				if (key.getKey)
                 {
