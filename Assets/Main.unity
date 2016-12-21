@@ -2933,8 +2933,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25291538, y: 0.36847195, z: 0.14870021}
-  m_Center: {x: 0.09669495, y: 0.07112849, z: -0.057427183}
+  m_Size: {x: 0.36379638, y: 0.36847195, z: 0.14705792}
+  m_Center: {x: 0.15213609, y: 0.07111035, z: -0.056605883}
 --- !u!82 &626508692
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5344,11 +5344,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 471580, guid: 6ff1c0e31ef7d1c42abf22322dc60888, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.1682734
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 471580, guid: 6ff1c0e31ef7d1c42abf22322dc60888, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 32.938705
+      value: 32.98
       objectReference: {fileID: 0}
     - target: {fileID: 471580, guid: 6ff1c0e31ef7d1c42abf22322dc60888, type: 2}
       propertyPath: m_LocalRotation.x

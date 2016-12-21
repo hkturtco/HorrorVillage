@@ -12,7 +12,7 @@ public class Ax : MonoBehaviour {
         AudioSource[] audios = GetComponents<AudioSource>();
         a_getAx = audios[0];
         gameObject.SetActive(false);
-        getAx = true;
+        getAx = false;
     }
 
 	void OnTriggerEnter(Collider other)
