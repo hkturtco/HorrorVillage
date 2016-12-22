@@ -39,7 +39,7 @@ public class door : MonoBehaviour {
 
     void Update()
     {
-        if (trigger && close && key.getKey && Input.GetKeyDown(KeyCode.O))
+        if (trigger && close && key.getKey && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("open door");
             a_doorunlock.Play();
@@ -72,7 +72,7 @@ public class door : MonoBehaviour {
 			} else {
 				if (key.getKey)
                 {
-					GUI.Box(new Rect(0,200,300,30), "Press O to open the door.");
+					GUI.Box(new Rect(0,200,300,30), "Press E to open the door.");
 				} else
                 {
                     GUI.Box(new Rect(0,200,300,30), "You need a key to open the door.");

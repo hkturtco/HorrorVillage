@@ -44,7 +44,7 @@ public class key : MonoBehaviour {
                 boxopen = Box3.boxopen;
                 break;
         }
-        if (trigger && boxopen && Input.GetKeyDown(KeyCode.P))
+        if (trigger && boxopen && Input.GetKeyDown(KeyCode.E))
         {
             a_getKey.Play();
             getKey = true;
@@ -56,7 +56,7 @@ public class key : MonoBehaviour {
 	void OnGUI(){
         if(trigger && boxopen)
         {
-		    GUI.Box(new Rect(0,200,300,30), "Press P to pick the Key.");
+		    GUI.Box(new Rect(0,200,300,30), "Press E to pick the Key.");
         }
 	}
 

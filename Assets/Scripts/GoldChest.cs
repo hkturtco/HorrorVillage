@@ -24,7 +24,7 @@ public class GoldChest : MonoBehaviour
     }
 	
 	void Update () {
-	    if (boxtrigger && Input.GetKeyDown(KeyCode.O))
+	    if (boxtrigger && Input.GetKeyDown(KeyCode.E))
         {
             a_openChest.Play();
             GetComponent<Renderer>().enabled = false;
@@ -36,7 +36,7 @@ public class GoldChest : MonoBehaviour
     {
         if (boxtrigger)
         {
-            GUI.Box(new Rect(0, 150, 400, 30), "Press O to open the box.");
+            GUI.Box(new Rect(0, 150, 400, 30), "Press E to open the box.");
         }
     }
 }

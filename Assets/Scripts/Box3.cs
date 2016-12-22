@@ -44,7 +44,7 @@ public class Box3 : MonoBehaviour {
             foreach (Renderer r in GetComponentsInChildren<Renderer>())
                 r.enabled = true;
         }
-        if (boxtrigger && !boxopen && Ax.getAx && Input.GetKeyDown(KeyCode.O))
+        if (boxtrigger && !boxopen && Ax.getAx && Input.GetKeyDown(KeyCode.E))
         {
             a_crackBox.Play();
             boxopen = true;
@@ -62,7 +62,7 @@ public class Box3 : MonoBehaviour {
                 if (Ax.getAx)
                 {
                     GUI.skin.label.alignment = TextAnchor.UpperLeft;
-                    GUI.Box(new Rect(0, 150, 300, 20), "Press O to crack the box.");
+                    GUI.Box(new Rect(0, 150, 300, 20), "Press E to crack the box.");
                     GUI.Box(new Rect(0, 200, 400, 20), "Note that the ax will be destroyed after use.");
                 }
                 else

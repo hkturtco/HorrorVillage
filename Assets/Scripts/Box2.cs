@@ -43,7 +43,7 @@ public class Box2 : MonoBehaviour {
             foreach (Renderer r in GetComponentsInChildren<Renderer>())
                 r.enabled = true;
         }
-        if (boxtrigger && !boxopen && Ax.getAx && Input.GetKeyDown(KeyCode.O))
+        if (boxtrigger && !boxopen && Ax.getAx && Input.GetKeyDown(KeyCode.E))
         {
             if (key.keynum != 1)
                 StartCoroutine(displayGameOverCanvas());
@@ -63,7 +63,7 @@ public class Box2 : MonoBehaviour {
                 if (Ax.getAx)
                 {
                     GUI.skin.label.alignment = TextAnchor.UpperLeft;
-                    GUI.Box(new Rect(0, 150, 300, 20), "Press O to crack the box.");
+                    GUI.Box(new Rect(0, 150, 300, 20), "Press E to crack the box.");
                     GUI.Box(new Rect(0, 200, 400, 20), "Note that the ax will be destroyed after use.");
                 }
                 else

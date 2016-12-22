@@ -28,7 +28,7 @@ public class Ax : MonoBehaviour {
 	}
 
 	void Update() {
-        if (trigger && !getAx && Input.GetKeyDown(KeyCode.P))
+        if (trigger && !getAx && Input.GetKeyDown(KeyCode.E))
         {
             a_getAx.Play();
             getAx = true;
@@ -38,7 +38,7 @@ public class Ax : MonoBehaviour {
 
 	void OnGUI() {
 		if (trigger) {
-			GUI.Box(new Rect(0,200,300,30), "Press P to pick the Ax.");
+			GUI.Box(new Rect(0,200,300,30), "Press E to pick the Ax.");
 		}
 	}
 }
