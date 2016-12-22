@@ -38,7 +38,7 @@ public class Ax : MonoBehaviour {
 
 	void OnGUI() {
 		if (trigger) {
-			GUI.Box(new Rect(0,200,300,25), "Press P to pick the Ax.");
+			GUI.Box(new Rect(0,200,300,30), "Press P to pick the Ax.");
 		}
 	}
 }

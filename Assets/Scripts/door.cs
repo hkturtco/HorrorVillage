@@ -68,14 +68,15 @@ public class door : MonoBehaviour {
 	void OnGUI(){
 		if (trigger) {
 			if (open) {
-				GUI.Box(new Rect(0,200,300,25), "Press P to close the door.");
+				GUI.Box(new Rect(0,200,300,30), "Press P to close the door.");
 			} else {
 				if (key.getKey)
                 {
-					GUI.Box(new Rect(0,200,300,25), "Press O to open the door.");
+					GUI.Box(new Rect(0,200,300,30), "Press O to open the door.");
 				} else
                 {
-                    GUI.Box(new Rect(0,200,300,25), "You need a key to open the door.");
+                    GUI.Box(new Rect(0,200,300,30), "You need a key to open the door.");
+                    GUI.Box(new Rect(0,230,450,30), "You have just triggered the machine that hiding the Ax in the room.");
 				}
 				
 			}

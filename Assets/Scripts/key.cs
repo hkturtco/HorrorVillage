@@ -56,7 +56,7 @@ public class key : MonoBehaviour {
 	void OnGUI(){
         if(trigger && boxopen)
         {
-		    GUI.Box(new Rect(0,200,300,25), "Press P to pick the Key.");
+		    GUI.Box(new Rect(0,200,300,30), "Press P to pick the Key.");
         }
 	}
 

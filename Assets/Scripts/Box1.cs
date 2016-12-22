@@ -63,8 +63,8 @@ public class Box1 : MonoBehaviour {
                 if (Ax.getAx)
                 {
                     GUI.skin.label.alignment = TextAnchor.UpperLeft;
-                    GUI.Box(new Rect(0, 150, 300, 20), "Press O to crack the box.");
-                    GUI.Box(new Rect(0, 200, 400, 20), "Note that the ax will be destroyed after use.");
+                    GUI.Box(new Rect(0, 150, 300, 30), "Press O to crack the box.");
+                    GUI.Box(new Rect(0, 200, 400, 30), "Note that the ax will be destroyed after use.");
                 }
                 else
                 {
