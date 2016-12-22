@@ -3,7 +3,8 @@ using System.Collections;
 
 public class GoldChest : MonoBehaviour
 {
-    public bool boxtrigger;
+    private bool boxopen;
+    private bool boxtrigger;
     private AudioSource a_openChest;
 
     void Start()
@@ -11,6 +12,7 @@ public class GoldChest : MonoBehaviour
         this.transform.GetChild(1).gameObject.SetActive(false);
         AudioSource[] audios = GetComponents<AudioSource>();
         a_openChest = audios[0];
+        boxopen = false;
     }
 
     void OnTriggerEnter(Collider other)
@@ -24,9 +26,10 @@ public class GoldChest : MonoBehaviour
     }
 	
 	void Update () {
-	    if (boxtrigger && Input.GetKeyDown(KeyCode.E))
+	    if (boxtrigger && !boxopen && Input.GetKeyDown(KeyCode.E))
         {
             a_openChest.Play();
+            boxopen = true;
             GetComponent<Renderer>().enabled = false;
             this.transform.GetChild(1).gameObject.SetActive(true);
         }
@@ -34,7 +37,7 @@ public class GoldChest : MonoBehaviour
 
     void OnGUI()
     {
-        if (boxtrigger)
+        if (boxtrigger && !boxopen)
         {
             GUI.Box(new Rect(0, 150, 400, 30), "Press E to open the box.");
         }
