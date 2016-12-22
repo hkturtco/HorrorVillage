@@ -64,11 +64,6 @@ public class monster : MonoBehaviour {
         yield return new WaitForSeconds(2);
 		Die_Canvas.gameObject.SetActive (true);
 		Time.timeScale = 0;
-		 if ( Input.GetKeyDown(KeyCode.R)) {
- 
- Application.LoadLevel(0);
- 
-   }
     }
 
     IEnumerator Win() {
