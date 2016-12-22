@@ -4,6 +4,7 @@ var Health = 1000;
 var scale=1f;
 var enemyHP : GameObject;
 var monster_animator : Animator;
+var audio_gethit : GameObject;
 function ApplyDamage (TheDamage:int) {
  	Health -= TheDamage;
  	scale=parseFloat((Health*1.0f)/maxHealth);
@@ -11,6 +12,7 @@ function ApplyDamage (TheDamage:int) {
  	var animatorstateinfo = monster_animator.GetCurrentAnimatorStateInfo(0);
  	if (!animatorstateinfo.IsName("GetHit")){
 			monster_animator.SetTrigger("GetHit");
+			audio_gethit.gameObject.SetActive(true);
 	}
 
  	if(Health <=0){

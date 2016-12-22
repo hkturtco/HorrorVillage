@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -8,22 +8,21 @@ public class monster : MonoBehaviour {
 	public Transform myTransform; 
 	public GameObject Die_Canvas;
 	public GameObject Win_Canvas;
-	//public static int hittime = 10;
+	public GameObject audio_roar;
+	public GameObject audio_die;
+	public GameObject audio_attack;
 	bool playedroar = false;
 	bool started = false;
 	bool dead = false;
-	// Use this for initialization
-	void Start () {
 
+	void Start () {
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		var animator = gameObject.GetComponent<Animator>();
-		var roar = gameObject.GetComponent<AudioSource>();
 		var animatorstateinfo = animator.GetCurrentAnimatorStateInfo(0);
 		if ((target.transform.position.z < -30) && (!started)) {
-			if (!playedroar) roar.mute = false;
+			if (!playedroar) audio_roar.gameObject.SetActive(true);
 			animator.SetTrigger("SeePlayer");
 			playedroar = true;
 			started = true;
@@ -33,7 +32,6 @@ public class monster : MonoBehaviour {
  			this.transform.LookAt( targetPostition ) ;
 		}
 		if (animatorstateinfo.IsName("chase") || animatorstateinfo.IsName("attack")){
-			if (playedroar) roar.mute = true;
 			transform.Translate(Vector3.forward*6*Time.deltaTime);
 		}
 		else{
@@ -41,23 +39,20 @@ public class monster : MonoBehaviour {
 		}
 		if (animatorstateinfo.IsName("die")){
 			dead = true;
+			audio_die.gameObject.SetActive(true);
 		}
 		if (dead){
 			StartCoroutine(Win());
 		}
-		// Debug.Log(dead);
 	}
 
 	void OnCollisionEnter(Collision collision) {
-
 		if (collision.gameObject.name == "FPSController"){
-
 			var animator = gameObject.GetComponent<Animator>();
 			animator.SetTrigger("InMeleeRange");
-
+			audio_attack.gameObject.SetActive(true);	
 			StartCoroutine(Die());			
 		}
-        
     }
 
     IEnumerator Die() {
