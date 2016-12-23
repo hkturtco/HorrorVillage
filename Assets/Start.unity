@@ -157,8 +157,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Basic Mouse control:\n\nLeft click: Right click: fire the gun\r\nWheel:
-    Change the color of the flashlight\r\n"
+  m_Text: "Basic Mouse control:\n\nLeft click: fire the gun\r\nWheel: Change the color
+    of the flashlight\r\n"
 --- !u!222 &109674919
 CanvasRenderer:
   m_ObjectHideFlags: 0
