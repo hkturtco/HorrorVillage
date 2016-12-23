@@ -37,7 +37,7 @@ public class Ax : MonoBehaviour {
     }
 
 	void OnGUI() {
-		if (trigger) {
+		if (trigger && !getAx) {
 			GUI.Box(new Rect(0,200,300,30), "Press E to pick the Ax.");
 		}
 	}
